@@ -1,1 +1,81 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CS 416: US Wildfires Narrative Visualization</title>
+
+  <link rel="stylesheet" href="styles.css">
+
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+
+  <script src="js/charts.js"></script>
+  <script src="js/state-map.js"></script>
+  <script src="js/scenes.js"></script>
+  <script src="js/main.js"></script>
+
+</head>
+
+<body>
+
+  <div id="container">
+    <header>
+      <h1>CS 416 Narrative Visualization: United States Wildfires (1992-2015)</h1>
+      <h4>By Samuel Briley</h4>
+      <h4>Dataset: https://www.kaggle.com/datasets/rtatman/188-million-us-wildfires</h4>
+      <p id="subtitle"></p>
+    </header>
+
+    <main id="scene-container">
+    </main>
+
+    <section id="controls" class="hidden">
+      <label for="stateSelect">
+        State:
+      </label>
+
+      <select id="stateSelect">
+        <option value="all">
+          All States
+        </option>
+      </select>
+
+      <label for="causeSelect">
+        Cause:
+      </label>
+      <select id="causeSelect">
+        <option value="all">
+          All Causes
+        </option>
+      </select>
+
+      <label for="yearStart">
+        Year start:
+      </label>
+      <input type="range" id="yearStart" min="1992" max="2015" value="1992">
+
+      <label for="yearEnd" style="margin-left:12px;">
+        Year end:
+      </label>
+      <input type="range" id="yearEnd" min="1992" max="2015" value="2015">
+
+      <span id="yearLabel" style="margin-left:12px;">
+        1992-2015
+      </span>
+
+    </section>
+
+    <nav id="navigation">
+      <button id="prevScene" disabled>
+        Previous
+      </button>
+      <button id="nextScene">
+        Next
+      </button>
+    </nav>
+
+  </div>
+
+</body>
+</html>
